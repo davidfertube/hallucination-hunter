@@ -1,6 +1,6 @@
 ---
 title: Hallucination Hunter
-emoji: 🎯
+emoji: ⚡
 colorFrom: red
 colorTo: yellow
 sdk: streamlit
@@ -15,7 +15,7 @@ tags:
   - mlops
 ---
 
-# Hallucination Hunter 🎯
+# Hallucination Hunter ⚡
 
 **Automated Groundedness & Relevance Testing for Industrial Agents**
 
