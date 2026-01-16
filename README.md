@@ -1,6 +1,6 @@
 ---
 title: Hallucination Hunter
-emoji: ⚡
+emoji: 
 colorFrom: red
 colorTo: yellow
 sdk: streamlit
@@ -15,11 +15,11 @@ tags:
   - mlops
 ---
 
-# Hallucination Hunter ⚡
+# Hallucination Hunter 
 
 **Automated Groundedness & Relevance Testing for Industrial Agents**
 
-## 🎯 Purpose
+##  Purpose
 
 Evaluate LLM responses for:
 - **Groundedness** - Is the response grounded in source documents?
@@ -27,14 +27,14 @@ Evaluate LLM responses for:
 - **Coherence** - Is the reasoning logical?
 - **Completeness** - Are all aspects addressed?
 
-## 🚀 Features
+##  Features
 
 - Upload test cases (CSV format)
 - Compare multiple models (GPT-4, Gemini, Claude)
 - Visualize evaluation metrics
 - Export detailed reports
 
-## 📊 Metrics Dashboard
+##  Metrics Dashboard
 
 | Metric | GPT-4 | Gemini Pro | Claude |
 |--------|-------|-----------|--------|
@@ -42,7 +42,7 @@ Evaluate LLM responses for:
 | Relevance | 88% | 91% | 87% |
 | Coherence | 94% | 90% | 93% |
 
-## 👤 Author
+##  Author
 
 **David Fernandez** | Industrial AI Engineer
-- 🌐 [Portfolio](https://www.davidfernandez.dev)
+-  [Portfolio](https://www.davidfernandez.dev)

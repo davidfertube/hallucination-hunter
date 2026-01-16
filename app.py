@@ -19,7 +19,7 @@ import json
 
 st.set_page_config(
     page_title="Hallucination Hunter",
-    page_icon="🎯",
+    page_icon="",
     layout="wide"
 )
 
@@ -45,7 +45,7 @@ SAMPLE_TRACES = [
         "response": "The indemnification cap is $1,000,000 as stated in Section 8.2.",
         "groundedness_score": 0.95,
         "reasoning": "Response directly quotes the cap amount from the source document.",
-        "verdict": "✅ Grounded"
+        "verdict": " Grounded"
     },
     {
         "id": "trace_002",
@@ -54,7 +54,7 @@ SAMPLE_TRACES = [
         "response": "The contract can be terminated immediately by either party.",
         "groundedness_score": 0.35,
         "reasoning": "Response contradicts source. Source says 30 days notice required, response claims immediate termination.",
-        "verdict": "❌ Hallucination"
+        "verdict": " Hallucination"
     },
     {
         "id": "trace_003",
@@ -63,7 +63,7 @@ SAMPLE_TRACES = [
         "response": "Data can be used for service delivery. The contract also mentions service improvement, though specifics are vague.",
         "groundedness_score": 0.82,
         "reasoning": "Response is mostly accurate but adds subjective interpretation ('vague') not in source.",
-        "verdict": "⚠️ Partially Grounded"
+        "verdict": "️ Partially Grounded"
     }
 ]
 
@@ -76,7 +76,7 @@ with st.sidebar:
     st.title("Hallucination Hunter")
     st.markdown("---")
     
-    st.subheader("📁 Data Source")
+    st.subheader(" Data Source")
     data_source = st.radio(
         "Select data source:",
         ["Sample Data", "Upload CSV", "API Connection"]
@@ -93,7 +93,7 @@ with st.sidebar:
     
     st.markdown("---")
     
-    st.subheader("⚙️ Settings")
+    st.subheader("️ Settings")
     threshold = st.slider("Hallucination Threshold", 0.0, 1.0, 0.7)
     
     st.markdown("---")
@@ -107,11 +107,11 @@ with st.sidebar:
 # MAIN CONTENT
 # ============================================
 
-st.title("🎯 Hallucination Hunter")
+st.title(" Hallucination Hunter")
 st.markdown("### Automated Groundedness & Relevance Testing for Industrial Agents")
 
 # Tabs
-tab1, tab2, tab3, tab4 = st.tabs(["📊 Overview", "🔍 Trace Analysis", "📈 Trends", "📋 Export"])
+tab1, tab2, tab3, tab4 = st.tabs([" Overview", " Trace Analysis", " Trends", " Export"])
 
 
 # ============================================
@@ -244,11 +244,11 @@ with tab2:
                 st.metric("Groundedness Score", f"{trace['groundedness_score']:.0%}")
                 
                 if trace["groundedness_score"] >= 0.8:
-                    st.success("✅ Well Grounded")
+                    st.success(" Well Grounded")
                 elif trace["groundedness_score"] >= 0.5:
-                    st.warning("⚠️ Partially Grounded")
+                    st.warning("️ Partially Grounded")
                 else:
-                    st.error("❌ Hallucination Detected")
+                    st.error(" Hallucination Detected")
                 
                 st.markdown("**Analysis:**")
                 st.write(trace["reasoning"])
@@ -284,10 +284,10 @@ with tab3:
     st.markdown("---")
     
     # Improvement suggestions
-    st.subheader("🔧 Improvement Recommendations")
+    st.subheader(" Improvement Recommendations")
     
     recommendations = [
-        {"priority": "🔴 High", "issue": "Vague contract terms causing hallucinations", 
+        {"priority": " High", "issue": "Vague contract terms causing hallucinations", 
          "solution": "Add explicit few-shot examples for ambiguous clauses"},
         {"priority": "🟡 Medium", "issue": "Latency variance in peak hours",
          "solution": "Implement response caching for common queries"},
@@ -310,11 +310,11 @@ with tab4:
     col1, col2 = st.columns(2)
     
     with col1:
-        st.markdown("### 📊 Download Data")
+        st.markdown("###  Download Data")
         
         csv = eval_data.to_csv(index=False)
         st.download_button(
-            label="📥 Download CSV",
+            label=" Download CSV",
             data=csv,
             file_name=f"hallucination_eval_{datetime.now().strftime('%Y%m%d')}.csv",
             mime="text/csv"
@@ -322,14 +322,14 @@ with tab4:
         
         json_data = json.dumps(SAMPLE_TRACES, indent=2)
         st.download_button(
-            label="📥 Download Traces (JSON)",
+            label=" Download Traces (JSON)",
             data=json_data,
             file_name=f"eval_traces_{datetime.now().strftime('%Y%m%d')}.json",
             mime="application/json"
         )
     
     with col2:
-        st.markdown("### 📋 Generate Report")
+        st.markdown("###  Generate Report")
         
         report_format = st.selectbox("Report Format", ["Markdown", "HTML", "PDF (Coming Soon)"])
         
@@ -356,7 +356,7 @@ Generated: {datetime.now().strftime('%Y-%m-%d %H:%M')}
             
             st.markdown(report)
             st.download_button(
-                label="📥 Download Report",
+                label=" Download Report",
                 data=report,
                 file_name=f"eval_report_{datetime.now().strftime('%Y%m%d')}.md",
                 mime="text/markdown"
